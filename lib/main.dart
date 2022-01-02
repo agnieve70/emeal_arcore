@@ -3,6 +3,7 @@ import 'package:emeal_new/screens/categories_screen.dart';
 import 'package:emeal_new/screens/category_meals_screen.dart';
 import 'package:emeal_new/screens/filters_screen.dart';
 import 'package:emeal_new/screens/modelview_screen.dart';
+import 'package:emeal_new/screens/qrscan_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:emeal_new/screens/login_screen.dart';
 import 'package:emeal_new/screens/meal_detail_screen.dart';
@@ -85,6 +86,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (ctx) => const LoginScreen(),
         TabsScreen.routeName: (ctx) => TabsScreen(),
+        QRViewScreen.routeName: (ctx) => QRViewScreen(),
         ObjectGesturesWidget.routeName: (ctx) => ObjectGesturesWidget(),
         CategoryMealsScreen.routeName: (ctx) =>
             CategoryMealsScreen(_availableMeals),

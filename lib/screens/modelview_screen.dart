@@ -10,15 +10,12 @@ import 'package:ar_flutter_plugin/datatypes/node_types.dart';
 import 'package:ar_flutter_plugin/datatypes/hittest_result_types.dart';
 import 'package:ar_flutter_plugin/models/ar_node.dart';
 import 'package:ar_flutter_plugin/models/ar_hittest_result.dart';
-import 'package:flutter/services.dart';
 import 'package:vector_math/vector_math_64.dart';
-import 'dart:math';
 import '../dummy_data.dart';
 
 class ObjectGesturesWidget extends StatefulWidget {
   static const routeName = '/model-view';
 
-  ObjectGesturesWidget({Key? key}) : super(key: key);
   @override
   _ObjectGesturesWidgetState createState() => _ObjectGesturesWidgetState();
 }

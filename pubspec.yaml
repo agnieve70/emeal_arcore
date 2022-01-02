@@ -40,7 +40,7 @@ dependencies:
   firebase_core: ^1.10.0
   flutter_toastr: ^1.0.3
   fluttertoast: ^8.0.8
-  qrscan: ^0.3.2
+  qr_code_scanner: ^0.6.1
   ar_flutter_plugin: ^0.6.1
 
   

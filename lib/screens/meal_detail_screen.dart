@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import '../dummy_data.dart';
-import 'package:qrscan/qrscan.dart' as scanner;
-import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class MealDetailScreen extends StatefulWidget {
   static const routeName = '/meal-detail';
@@ -13,23 +10,6 @@ class MealDetailScreen extends StatefulWidget {
 
 class _MealDetailScreenState extends State<MealDetailScreen> {
   String result = "";
-
-  Future _scanQR() async {
-    try {
-      String? cameraScanResult = await scanner.scan();
-      setState(() {
-        result = cameraScanResult!;
-
-        if (result == "emealapp143") {
-          Navigator.of(context).pushNamed('/model-view');
-        } else {
-          Fluttertoast.showToast(msg: "The QR Code was invalid!");
-        } // setting string result with cameraScanResult
-      });
-    } on PlatformException catch (e) {
-      print(e);
-    }
-  }
 
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
@@ -65,11 +45,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
         padding: EdgeInsets.fromLTRB(50, 15, 50, 15),
         minWidth: MediaQuery.of(context).size.width - 50,
         onPressed: () {
-          if (result != "") {
-            Navigator.of(context).pushNamed('/model-view');
-          } else {
-            _scanQR();
-          } // calling a function when user click on button
+          Navigator.of(context).pushNamed('/qr-scan');
         },
         child: Text(
           "3D View",

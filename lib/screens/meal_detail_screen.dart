@@ -23,7 +23,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
         if (result == "emealapp143") {
           Navigator.of(context).pushNamed('/model-view');
         } else {
-          Fluttertoast.showToast(msg: result);
+          Fluttertoast.showToast(msg: "The QR Code was invalid!");
         } // setting string result with cameraScanResult
       });
     } on PlatformException catch (e) {

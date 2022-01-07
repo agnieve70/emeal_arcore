@@ -90,7 +90,9 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                   vertical: 5,
                   horizontal: 50,
                 ),
-                child: Text("Sauce: " + selectedMeal.sauce),
+                child: Text(selectedMeal.sauce == ''
+                    ? ""
+                    : 'Sauce: ' + selectedMeal.sauce),
               ),
 
               // buildContainer(

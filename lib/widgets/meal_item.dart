@@ -6,50 +6,44 @@ class MealItem extends StatelessWidget {
   final String id;
   final String title;
   final String imageUrl;
-  final int duration;
-  final Complexity complexity;
-  final Affordability affordability;
 
   MealItem({
     required this.id,
     required this.title,
     required this.imageUrl,
-    required this.affordability,
-    required this.complexity,
-    required this.duration,
   });
 
-  String get complexityText {
-    switch (complexity) {
-      case Complexity.Simple:
-        return 'Simple';
-        break;
-      case Complexity.Challenging:
-        return 'Challenging';
-        break;
-      case Complexity.Hard:
-        return 'Hard';
-        break;
-      default:
-        return 'Unknown';
-    }
-  }
+  // String get complexityText {
+  //   switch (complexity) {
+  //     case Complexity.Simple:
+  //       return 'Simple';
+  //       break;
+  //     case Complexity.Challenging:
+  //       return 'Challenging';
+  //       break;
+  //     case Complexity.Hard:
+  //       return 'Hard';
+  //       break;
+  //     default:
+  //       return 'Unknown';
+  //   }
+  // }
 
-  String get affordabilityText {
-    switch (affordability) {
-      case Affordability.Affordable:
-        return 'Affordable';
-        break;
-      case Affordability.Pricey:
-        return 'Pricey';
-        break;
-      case Affordability.Luxurious:
-        return 'Expensive';
-        break;
-      default:
-        return 'Unknown';
-    }
-  }
+  // String get affordabilityText {
+  //   switch (affordability) {
+  //     case Affordability.Affordable:
+  //       return 'Affordable';
+  //       break;
+  //     case Affordability.Pricey:
+  //       return 'Pricey';
+  //       break;
+  //     case Affordability.Luxurious:
+  //       return 'Expensive';
+  //       break;
+  //     default:
+  //       return 'Unknown';
+  //   }
+  // }
 
   void selectMeal(BuildContext context) {
     Navigator.of(context).pushNamed(
@@ -111,46 +105,47 @@ class MealItem extends StatelessWidget {
                     ))
               ],
             ),
-            Padding(
-                padding: EdgeInsets.all(20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.schedule,
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text('$duration min')
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.work,
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(complexityText)
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.attach_money,
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(affordabilityText)
-                      ],
-                    )
-                  ],
-                )),
+            // Padding(
+            //   padding: EdgeInsets.all(20),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //     children: <Widget>[
+            //       Row(
+            //         children: <Widget>[
+            //           Icon(
+            //             Icons.schedule,
+            //           ),
+            //           SizedBox(
+            //             width: 6,
+            //           ),
+            //           Text('$duration min')
+            //         ],
+            //       ),
+            //       Row(
+            //         children: <Widget>[
+            //           Icon(
+            //             Icons.work,
+            //           ),
+            //           SizedBox(
+            //             width: 6,
+            //           ),
+            //           Text(complexityText)
+            //         ],
+            //       ),
+            //       Row(
+            //         children: <Widget>[
+            //           Icon(
+            //             Icons.attach_money,
+            //           ),
+            //           SizedBox(
+            //             width: 6,
+            //           ),
+            //           Text(affordabilityText)
+            //         ],
+            //       )
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

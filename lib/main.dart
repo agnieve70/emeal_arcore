@@ -26,10 +26,15 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Map<String, bool> _filters = {
-    'gluten': false,
-    'lactose': false,
-    'vegan': false,
-    'vegetarian': false,
+    'egg': false,
+    'cheese': false,
+    'fish': false,
+    'milk': false,
+    'shellfish': false,
+    'halal': true,
+    'keto': true,
+    'vegan': true,
+    'seafood': true
   };
 
   List<Meal> _availableMeals = DUMMY_MEALS;
@@ -39,16 +44,32 @@ class _MyAppState extends State<MyApp> {
       _filters = filterData;
 
       _availableMeals = DUMMY_MEALS.where((meal) {
-        if (_filters["gluten"] == true && !meal.isGlutenFree) {
+        if (_filters["egg"] == true && !meal.isAllergyEgg) {
           return false;
         }
-        if (_filters['lactose'] == true && !meal.isLactoseFree) {
+        if (_filters['cheese'] == true && !meal.isAllergyCheese) {
           return false;
         }
-        if (_filters['vegan'] == true && !meal.isVegan) {
+        if (_filters['fish'] == true && !meal.isAllergyFish) {
           return false;
         }
-        if (_filters['vegetarian'] == true && !meal.isVegetarian) {
+        if (_filters['milk'] == true && !meal.isAllergyMilk) {
+          return false;
+        }
+        if (_filters['shellfish'] == true && !meal.isAllergyShellFish) {
+          return false;
+        }
+
+        if (_filters['halal'] == false && meal.isHalal) {
+          return false;
+        }
+        if (_filters['vegan'] == false && meal.isVegan) {
+          return false;
+        }
+        if (_filters['seafood'] == false && meal.isSeaFood) {
+          return false;
+        }
+        if (_filters['keto'] == false && meal.isKeto) {
           return false;
         }
         return true;

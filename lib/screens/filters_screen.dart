@@ -13,17 +13,29 @@ class FiltersScreen extends StatefulWidget {
 }
 
 class _FiltersScreenState extends State<FiltersScreen> {
-  bool _glutenFree = false;
-  bool _vegetarian = false;
-  bool _vegan = false;
-  bool _lactoseFree = false;
+  bool _allergyEgg = false;
+  bool _allergyMilk = false;
+  bool _allergyCheese = false;
+  bool _allergyFish = false;
+  bool _allergyShellFish = false;
+
+  bool _halal = true;
+  bool _keto = true;
+  bool _seafood = true;
+  bool _vegan = true;
 
   @override
   initState() {
-    _glutenFree = widget.currentFilters['gluten']!;
-    _lactoseFree = widget.currentFilters['lactose']!;
+    _allergyEgg = widget.currentFilters['egg']!;
+    _allergyMilk = widget.currentFilters['milk']!;
+    _allergyCheese = widget.currentFilters['cheese']!;
+    _allergyFish = widget.currentFilters['fish']!;
+    _allergyShellFish = widget.currentFilters['shellfish']!;
+
+    _halal = widget.currentFilters['halal']!;
+    _keto = widget.currentFilters['keto']!;
     _vegan = widget.currentFilters['vegan']!;
-    _vegetarian = widget.currentFilters['vegetarian']!;
+    _seafood = widget.currentFilters['seafood']!;
 
     super.initState();
   }
@@ -56,10 +68,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
             IconButton(
                 onPressed: () {
                   final selectedFilters = {
-                    'gluten': _glutenFree,
-                    'lactose': _lactoseFree,
+                    'egg': _allergyEgg,
+                    'milk': _allergyMilk,
+                    'cheese': _allergyCheese,
+                    'fish': _allergyFish,
+                    'shellfish': _allergyShellFish,
+                    'halal': _halal,
                     'vegan': _vegan,
-                    'vegetarian': _vegetarian,
+                    'keto': _keto,
+                    'seafood': _seafood,
                   };
                   widget.saveFilters!(selectedFilters);
                 },
@@ -81,42 +98,93 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 child: ListView(
               children: <Widget>[
                 _buildSwitchListTile(
-                  'Glutten-free',
-                  'only include gluten-free meals',
-                  _glutenFree,
+                  'Allergy with Egg',
+                  'Does not include meals with egg',
+                  _allergyEgg,
                   (newValue) {
                     setState(() {
-                      _glutenFree = newValue;
+                      _allergyEgg = newValue;
                     });
                   },
                 ),
                 _buildSwitchListTile(
-                  'Lactose-free',
-                  'only include lactose-free meals',
-                  _lactoseFree,
+                  'Allergy with Milk',
+                  'Does not include meals with Milk',
+                  _allergyMilk,
                   (newValue) {
                     setState(() {
-                      _lactoseFree = newValue;
+                      _allergyMilk = newValue;
                     });
                   },
                 ),
                 _buildSwitchListTile(
-                  'Vegitarian',
-                  'only include vegetarian meals',
-                  _vegetarian,
+                  'Allergy with Cheese',
+                  'Does not include meals with Cheese',
+                  _allergyCheese,
                   (newValue) {
                     setState(() {
-                      _vegetarian = newValue;
+                      _allergyCheese = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  'Allergy with Fish',
+                  'Does not include meals with Fish',
+                  _allergyFish,
+                  (newValue) {
+                    setState(() {
+                      _allergyFish = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  'Allergy with ShellFish',
+                  'Does not include meals with ShellFish',
+                  _allergyShellFish,
+                  (newValue) {
+                    setState(() {
+                      _allergyShellFish = newValue;
+                    });
+                  },
+                ),
+                const Expanded(child: Divider()),
+                _buildSwitchListTile(
+                  'Halal',
+                  'Include meals with Halal category',
+                  _halal,
+                  (newValue) {
+                    setState(() {
+                      _halal = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  'Keto',
+                  'Include meals with Keto category',
+                  _keto,
+                  (newValue) {
+                    setState(() {
+                      _keto = newValue;
                     });
                   },
                 ),
                 _buildSwitchListTile(
                   'Vegan',
-                  'only include vegan meals',
+                  'Include meals with Vegan category',
                   _vegan,
                   (newValue) {
                     setState(() {
                       _vegan = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  'Sea Foods',
+                  'Include meals with Sea Food category',
+                  _seafood,
+                  (newValue) {
+                    setState(() {
+                      _seafood = newValue;
                     });
                   },
                 ),

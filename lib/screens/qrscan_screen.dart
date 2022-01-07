@@ -134,12 +134,18 @@ class _QRViewScreenState extends State<QRViewScreen> {
   }
 
   void _onQRViewCreated(QRViewController controller) {
+    final mealId = ModalRoute.of(context)!.settings.arguments as String;
+
     setState(() {
       this.controller = controller;
     });
     controller.scannedDataStream.listen((scanData) {
       if (scanData.code == "emealapp143") {
-        Navigator.of(context).pushReplacementNamed('/model-view');
+        Navigator.of(context).pushReplacementNamed(
+          '/model-view',
+          arguments: mealId,
+        );
+
         controller.dispose();
       } else {
         Fluttertoast.showToast(msg: "Invalid Code!");

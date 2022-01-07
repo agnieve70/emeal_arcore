@@ -45,7 +45,10 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
         padding: EdgeInsets.fromLTRB(50, 15, 50, 15),
         minWidth: MediaQuery.of(context).size.width - 50,
         onPressed: () {
-          Navigator.of(context).pushNamed('/qr-scan');
+          Navigator.of(context).pushNamed(
+            '/qr-scan',
+            arguments: mealId,
+          );
         },
         child: Text(
           "3D View",
@@ -73,21 +76,37 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
               ),
               SizedBox(height: 15),
               signUpButton,
-              buildSectionTitle(context, 'Ingredients'),
-              buildContainer(
-                ListView.builder(
-                  itemBuilder: (ctx, index) => Card(
-                    color: Theme.of(context).accentColor,
-                    child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 10,
-                        ),
-                        child: Text(selectedMeal.ingredients[index])),
-                  ),
-                  itemCount: selectedMeal.ingredients.length,
+              SizedBox(height: 15),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  vertical: 5,
+                  horizontal: 50,
                 ),
+                child: Text("Details: " + selectedMeal.details),
               ),
+              SizedBox(height: 15),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  vertical: 5,
+                  horizontal: 50,
+                ),
+                child: Text("Sauce: " + selectedMeal.sauce),
+              ),
+
+              // buildContainer(
+              //   ListView.builder(
+              //     itemBuilder: (ctx, index) => Card(
+              //       color: Theme.of(context).accentColor,
+              //       child: Padding(
+              //           padding: EdgeInsets.symmetric(
+              //             vertical: 5,
+              //             horizontal: 10,
+              //           ),
+              //           child: Text(selectedMeal.ingredients[index])),
+              //     ),
+              //     itemCount: selectedMeal.ingredients.length,
+              //   ),
+              // ),
             ],
           ),
         ));

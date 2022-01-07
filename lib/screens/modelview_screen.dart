@@ -36,9 +36,6 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
 
   @override
   Widget build(BuildContext context) {
-    const String mealId = "m1";
-    final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
-
     return Scaffold(
         appBar: AppBar(
           title: const Text('EMEAL 3D Model'),
@@ -102,6 +99,9 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
 
   Future<void> onPlaneOrPointTapped(
       List<ARHitTestResult> hitTestResults) async {
+    final mealId = ModalRoute.of(context)!.settings.arguments as String;
+    final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
+
     var singleHitTestResult = hitTestResults.firstWhere(
         (hitTestResult) => hitTestResult.type == ARHitTestResultType.plane);
     if (singleHitTestResult != null) {
@@ -113,8 +113,7 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
         // Add note to anchor
         var newNode = ARNode(
             type: NodeType.webGLB,
-            uri:
-                "https://github.com/agnieve70/3dObjects/blob/main/Fishty.glb?raw=true",
+            uri: selectedMeal.threeDObjUrl,
             scale: Vector3(1.4, 1.4, 1.4),
             position: Vector3(0.0, 0.0, 0.0),
             rotation: Vector4(1.0, 0.0, 0.0, 0.0));

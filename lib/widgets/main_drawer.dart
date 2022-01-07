@@ -53,7 +53,7 @@ class MainDrawer extends StatelessWidget {
             "Meals",
             Icons.restaurant,
             () {
-              Navigator.of(context).pushReplacementNamed('/tab-screen');
+              Navigator.of(context).pushReplacementNamed('/category-meals');
             },
           ),
           buildListTile(

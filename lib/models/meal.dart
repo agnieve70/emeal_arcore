@@ -17,28 +17,36 @@ class Meal {
   final List<String> categories;
   final String title;
   final String imageUrl;
-  final List<String> ingredients;
-  final List<String> steps;
-  final int duration;
-  final Complexity complexity;
-  final Affordability affordability;
-  final bool isGlutenFree;
-  final bool isLactoseFree;
+  final String threeDObjUrl;
+  final String details;
+  final String sauce;
+
+  final bool isHalal;
+  final bool isKeto;
+  final bool isSeaFood;
   final bool isVegan;
-  final bool isVegetarian;
+
+  final bool isAllergyEgg;
+  final bool isAllergyMilk;
+  final bool isAllergyCheese;
+  final bool isAllergyFish;
+  final bool isAllergyShellFish;
 
   const Meal(
       {required this.id,
       required this.categories,
       required this.title,
+      required this.threeDObjUrl,
       required this.imageUrl,
-      required this.ingredients,
-      required this.steps,
-      required this.duration,
-      required this.complexity,
-      required this.affordability,
-      required this.isGlutenFree,
-      required this.isLactoseFree,
+      required this.details,
+      required this.sauce,
+      required this.isHalal,
+      required this.isKeto,
+      required this.isSeaFood,
       required this.isVegan,
-      required this.isVegetarian});
+      required this.isAllergyEgg,
+      required this.isAllergyMilk,
+      required this.isAllergyCheese,
+      required this.isAllergyFish,
+      required this.isAllergyShellFish});
 }

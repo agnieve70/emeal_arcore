@@ -114,7 +114,11 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
         var newNode = ARNode(
             type: NodeType.webGLB,
             uri: selectedMeal.threeDObjUrl,
-            scale: Vector3(1.4, 1.4, 1.4),
+            scale: Vector3(
+              selectedMeal.scale,
+              selectedMeal.scale,
+              selectedMeal.scale,
+            ),
             position: Vector3(0.0, 0.0, 0.0),
             rotation: Vector4(1.0, 0.0, 0.0, 0.0));
         bool? didAddNodeToAnchor =

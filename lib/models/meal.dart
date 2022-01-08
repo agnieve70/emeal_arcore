@@ -20,6 +20,7 @@ class Meal {
   final String threeDObjUrl;
   final String details;
   final String sauce;
+  final double scale;
 
   final bool isHalal;
   final bool isKeto;
@@ -40,6 +41,7 @@ class Meal {
       required this.imageUrl,
       required this.details,
       required this.sauce,
+      required this.scale,
       required this.isHalal,
       required this.isKeto,
       required this.isSeaFood,

@@ -35,12 +35,13 @@ const DUMMY_MEALS = const [
     ],
     title: 'Salmon Empanadas',
     imageUrl:
-        'https://github.com/agnieve70/3dObjects/blob/main/salmon%20empanadas.png?raw=true',
+        'https://github.com/agnieve70/3dObjects/blob/main/salmon_empanadas.png?raw=true',
     threeDObjUrl:
         'https://github.com/agnieve70/3dObjects/blob/main/Salmon_Empanadas.glb?raw=true',
     details: 'Salmon Fillets, Pie Crust, Fresh Parsely and Fresh Basil',
     sauce:
         'Butter, Flour, dry mustard, salt, pepper, milk, shredded gruyere cheese',
+    scale: 1.4,
     isHalal: true,
     isKeto: false,
     isSeaFood: false,
@@ -65,6 +66,7 @@ const DUMMY_MEALS = const [
     details: 'Salmon Fillets, Pie Crust, Fresh Parsely and Fresh Basil',
     sauce:
         'Butter, Flour, dry mustard, salt, pepper, milk, shredded gruyere cheese',
+    scale: 0.2,
     isHalal: true,
     isKeto: true,
     isSeaFood: false,
@@ -87,6 +89,7 @@ const DUMMY_MEALS = const [
         'https://github.com/agnieve70/3dObjects/blob/main/Chicken_Meal.glb?raw=true',
     details: 'fried rice with egg, fried chicken, lemon, onion, and ketchup',
     sauce: '',
+    scale: 1.2,
     isHalal: true,
     isKeto: false,
     isSeaFood: false,
@@ -104,7 +107,7 @@ const DUMMY_MEALS = const [
     ],
     title: 'Croissant Norweski',
     imageUrl:
-        'https://github.com/agnieve70/3dObjects/blob/main/Croissant%20Norweski.png?raw=true',
+        'https://github.com/agnieve70/3dObjects/blob/main/croissant_norweski.png?raw=true',
     threeDObjUrl:
         'https://github.com/agnieve70/3dObjects/blob/main/croissant_norweski.glb?raw=true',
     details: 'croissant, cocumber, tomato, bacon cheese, letuce, ',
@@ -118,6 +121,7 @@ const DUMMY_MEALS = const [
     isAllergyCheese: false,
     isAllergyFish: false,
     isAllergyShellFish: false,
+    scale: 0.1,
   ),
   Meal(
     id: 'm5',
@@ -133,6 +137,7 @@ const DUMMY_MEALS = const [
     details:
         'Lamb and mutton, ground meat, onion, garlic, chili pepper, black pepper',
     sauce: '',
+    scale: 0.1,
     isHalal: true,
     isKeto: true,
     isSeaFood: false,
@@ -157,6 +162,7 @@ const DUMMY_MEALS = const [
     details:
         'T-bone or porterhouse steak, rosemary, sage, olive oil, salt and black pepper',
     sauce: '',
+    scale: 0.7,
     isHalal: true,
     isKeto: true,
     isSeaFood: false,
@@ -184,6 +190,7 @@ const DUMMY_MEALS = const [
     details:
         'Sinangag is garlic fried rice at the bottom. Next layer is the tocino (the cured pork belly). Top it off with a fried egg. Cucumber tomato relish on the side',
     sauce: '',
+    scale: 0.7,
     isAllergyEgg: true,
     isAllergyMilk: false,
     isAllergyCheese: false,
@@ -202,6 +209,7 @@ const DUMMY_MEALS = const [
         'https://github.com/agnieve70/3dObjects/blob/main/Meal1.glb?raw=true',
     details: 'Bread, meat or sausage, cheese, eggs, veggies, herbs, salad',
     sauce: '',
+    scale: 0.1,
     isHalal: true,
     isKeto: false,
     isSeaFood: false,
@@ -223,6 +231,7 @@ const DUMMY_MEALS = const [
     details:
         'Rhein bread with a layer of butter, and cheese on the top or the side',
     sauce: '',
+    scale: 0.1,
     isHalal: true,
     isKeto: false,
     isSeaFood: false,
@@ -238,11 +247,12 @@ const DUMMY_MEALS = const [
     categories: ['c1', 'c3'],
     title: 'Vegie Bowl',
     imageUrl:
-        'https://raw.githubusercontent.com/agnieve70/3dObjects/main/VeggieBowl.png',
+        'https://raw.githubusercontent.com/agnieve70/3dObjects/main/vegiebowl.png',
     threeDObjUrl:
-        'https://github.com/agnieve70/3dObjects/blob/main/Vegie_Bowl.glb?raw=true',
+        'https://github.com/agnieve70/3dObjects/blob/main/vegiebowl.glb?raw=true',
     details: 'Carrots, broccoli, potato, green beans, corn',
     sauce: '',
+    scale: 0.1,
     isHalal: true,
     isKeto: false,
     isSeaFood: false,
@@ -265,6 +275,7 @@ const DUMMY_MEALS = const [
         'https://github.com/agnieve70/3dObjects/blob/main/Meal3.glb?raw=true',
     details: 'Bavarian bread rolls, tomato, cheese, cucumber, sesame seed',
     sauce: '',
+    scale: 0.1,
     isHalal: true,
     isKeto: false,
     isSeaFood: false,
@@ -285,6 +296,7 @@ const DUMMY_MEALS = const [
         'https://github.com/agnieve70/3dObjects/blob/main/Meal4.glb?raw=true',
     details: 'Strawberry, bread, fig, glaze',
     sauce: 'Cream cheese, butter, powdered sugar, milk, vanilla extract',
+    scale: 0.1,
     isHalal: true,
     isKeto: false,
     isSeaFood: false,
@@ -300,11 +312,12 @@ const DUMMY_MEALS = const [
     categories: ['c1', 'c2'],
     title: 'Sashimi Plate',
     imageUrl:
-        'https://github.com/agnieve70/3dObjects/blob/main/sashimi%20plate.png?raw=true',
+        'https://github.com/agnieve70/3dObjects/blob/main/sashimi_plate.png?raw=true',
     threeDObjUrl:
         'https://github.com/agnieve70/3dObjects/blob/main/sashimi_plate.glb?raw=true',
     details: 'Strawberry, bread, fig, glaze',
     sauce: '',
+    scale: 0.1,
     isHalal: true,
     isKeto: false,
     isSeaFood: true,
@@ -322,9 +335,10 @@ const DUMMY_MEALS = const [
     imageUrl:
         'https://github.com/agnieve70/3dObjects/blob/main/unagi_bento.png?raw=true',
     threeDObjUrl:
-        'https://github.com/agnieve70/3dObjects/blob/main/unagi_bento%20(3).glb?raw=true',
+        'https://github.com/agnieve70/3dObjects/blob/main/unagi_bento.glb?raw=true',
     details: 'unagi(eel) Fillets, unagi sauce, steamed rice',
     sauce: '',
+    scale: 1.4,
     isHalal: true,
     isKeto: false,
     isSeaFood: true,
@@ -340,12 +354,13 @@ const DUMMY_MEALS = const [
     categories: ['c1', 'c3'],
     title: 'Cinnamon Pastry',
     imageUrl:
-        'https://github.com/agnieve70/3dObjects/blob/main/Cinnamon_Pastry.png?raw=true',
+        'https://github.com/agnieve70/3dObjects/blob/main/cinnamon.png?raw=true',
     threeDObjUrl:
-        'https://github.com/agnieve70/3dObjects/blob/main/Cinnamon_Pastry.glb?raw=true',
+        'https://github.com/agnieve70/3dObjects/blob/main/cinnamon.glb?raw=true',
     details:
         'Butter, Flour, Cream cheese, Baker’s yeast, Sugar, Egg, Powdered sugar, Brown sugar, Grounded cinnamon',
     sauce: '',
+    scale: 0.11,
     isHalal: true,
     isKeto: false,
     isSeaFood: false,
@@ -367,6 +382,7 @@ const DUMMY_MEALS = const [
     details:
         'Cream, Milk, Vanilla, Egg, Condensed Milk, Sugar, Vanilla Extract',
     sauce: '',
+    scale: 0.1,
     isHalal: true,
     isKeto: true,
     isSeaFood: false,
@@ -387,6 +403,7 @@ const DUMMY_MEALS = const [
         'https://github.com/agnieve70/3dObjects/blob/main/belgian_waffle.glb?raw=true',
     details: 'Waffle, chocolate, Strawberry, blackberries',
     sauce: '',
+    scale: 0.1,
     isHalal: true,
     isKeto: true,
     isSeaFood: false,

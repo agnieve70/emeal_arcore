@@ -44,19 +44,19 @@ class _MyAppState extends State<MyApp> {
       _filters = filterData;
 
       _availableMeals = DUMMY_MEALS.where((meal) {
-        if (_filters["egg"] == true && !meal.isAllergyEgg) {
+        if (_filters["egg"] == true && meal.isAllergyEgg) {
           return false;
         }
-        if (_filters['cheese'] == true && !meal.isAllergyCheese) {
+        if (_filters['cheese'] == true && meal.isAllergyCheese) {
           return false;
         }
-        if (_filters['fish'] == true && !meal.isAllergyFish) {
+        if (_filters['fish'] == true && meal.isAllergyFish) {
           return false;
         }
-        if (_filters['milk'] == true && !meal.isAllergyMilk) {
+        if (_filters['milk'] == true && meal.isAllergyMilk) {
           return false;
         }
-        if (_filters['shellfish'] == true && !meal.isAllergyShellFish) {
+        if (_filters['shellfish'] == true && meal.isAllergyShellFish) {
           return false;
         }
 

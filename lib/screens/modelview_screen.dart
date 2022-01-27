@@ -39,6 +39,10 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('EMEAL 3D Model'),
+          leading: new IconButton(
+            icon: new Icon(Icons.ac_unit),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
         ),
         body: Container(
             child: Stack(children: [

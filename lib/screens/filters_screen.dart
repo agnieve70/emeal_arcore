@@ -13,6 +13,12 @@ class FiltersScreen extends StatefulWidget {
 }
 
 class _FiltersScreenState extends State<FiltersScreen> {
+  bool _fiftyBelow = false;
+  bool _fiftyToOneHundred = false;
+  bool _oneHundredToOneFifty = false;
+  bool _oneFiftyToTwoHundred = false;
+  bool _twoHundredAbove = false;
+
   bool _allergyEgg = false;
   bool _allergyMilk = false;
   bool _allergyCheese = false;
@@ -26,6 +32,12 @@ class _FiltersScreenState extends State<FiltersScreen> {
 
   @override
   initState() {
+    _fiftyBelow = widget.currentFilters['fiftyBelow']!;
+    _fiftyToOneHundred = widget.currentFilters['fiftyToOneHundred']!;
+    _oneHundredToOneFifty = widget.currentFilters['oneHundredToOneFifty']!;
+    _oneFiftyToTwoHundred = widget.currentFilters['oneFiftyToTwoHundred']!;
+    _twoHundredAbove = widget.currentFilters['twoHundredAbove']!;
+
     _allergyEgg = widget.currentFilters['egg']!;
     _allergyMilk = widget.currentFilters['milk']!;
     _allergyCheese = widget.currentFilters['cheese']!;
@@ -77,6 +89,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     'vegan': _vegan,
                     'keto': _keto,
                     'seafood': _seafood,
+                    'fiftyBelow': _fiftyBelow,
+                    'fiftyToOneHundred': _fiftyToOneHundred,
+                    'oneHundredToOneFifty': _oneHundredToOneFifty,
+                    'oneFiftyToTwoHundred': _oneFiftyToTwoHundred,
+                    'twoHundredAbove': _twoHundredAbove,
                   };
                   widget.saveFilters!(selectedFilters);
                 },
@@ -185,6 +202,57 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   (newValue) {
                     setState(() {
                       _seafood = newValue;
+                    });
+                  },
+                ),
+                const Expanded(child: Divider()),
+                _buildSwitchListTile(
+                  'Php 50.00 Below',
+                  'Meals that are Php 50.00 below',
+                  _fiftyBelow,
+                  (newValue) {
+                    setState(() {
+                      _fiftyBelow = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  'Php 50.00 to 100.00',
+                  'Meals that are Php 50.00 to 100.00',
+                  _fiftyToOneHundred,
+                  (newValue) {
+                    setState(() {
+                      _fiftyToOneHundred = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  'Php 100.00 to 150.00',
+                  'Meals that are Php 100.00 to 150.00',
+                  _oneHundredToOneFifty,
+                  (newValue) {
+                    setState(() {
+                      _oneHundredToOneFifty = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  'Php 150.00 to 200.00',
+                  'Meals that are Php 150.00 to 200.00',
+                  _oneFiftyToTwoHundred,
+                  (newValue) {
+                    setState(() {
+                      _oneFiftyToTwoHundred = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  'Php 200.00 Above',
+                  'Meals that are Php 200.00 above',
+                  _twoHundredAbove,
+                  (newValue) {
+                    setState(() {
+                      _twoHundredAbove = newValue;
                     });
                   },
                 ),

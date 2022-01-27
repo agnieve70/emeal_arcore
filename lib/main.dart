@@ -34,7 +34,12 @@ class _MyAppState extends State<MyApp> {
     'halal': true,
     'keto': true,
     'vegan': true,
-    'seafood': true
+    'seafood': true,
+    'fiftyBelow': false,
+    'fiftyToOneHundred': false,
+    'oneHundredToOneFifty': false,
+    'oneFiftyToTwoHundred': false,
+    'twoHundredAbove': false
   };
 
   List<Meal> _availableMeals = DUMMY_MEALS;
@@ -44,7 +49,21 @@ class _MyAppState extends State<MyApp> {
       _filters = filterData;
 
       _availableMeals = DUMMY_MEALS.where((meal) {
-        if (_filters["egg"] == true && meal.isAllergyEgg) {
+        if (_filters["fiftyBelow"] == true && meal.isFiftyBelow) {
+          return false;
+        }
+        if (_filters["fiftyToOneHundred"] == true && meal.isFiftyToOneHundred) {
+          return false;
+        }
+        if (_filters["oneHundredToOneFifty"] == true &&
+            meal.isOneHundredToOneFifty) {
+          return false;
+        }
+        if (_filters["oneFiftyToTwoHundred"] == true &&
+            meal.isOneFiftyToTwoHundred) {
+          return false;
+        }
+        if (_filters["twoHundredAbove"] == true && meal.isTwoHundredAbove) {
           return false;
         }
         if (_filters['cheese'] == true && meal.isAllergyCheese) {

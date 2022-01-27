@@ -94,7 +94,14 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                     ? ""
                     : 'Sauce: ' + selectedMeal.sauce),
               ),
-
+              SizedBox(height: 15),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  vertical: 5,
+                  horizontal: 50,
+                ),
+                child: Text('Price: ' + selectedMeal.price),
+              ),
               // buildContainer(
               //   ListView.builder(
               //     itemBuilder: (ctx, index) => Card(

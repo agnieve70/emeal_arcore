@@ -49,23 +49,25 @@ class _MyAppState extends State<MyApp> {
       _filters = filterData;
 
       _availableMeals = DUMMY_MEALS.where((meal) {
-        if (_filters["fiftyBelow"] == true && meal.isFiftyBelow) {
+        if (_filters["fiftyBelow"] == false && meal.isFiftyBelow) {
           return false;
         }
-        if (_filters["fiftyToOneHundred"] == true && meal.isFiftyToOneHundred) {
+        if (_filters["fiftyToOneHundred"] == false &&
+            meal.isFiftyToOneHundred) {
           return false;
         }
-        if (_filters["oneHundredToOneFifty"] == true &&
+        if (_filters["oneHundredToOneFifty"] == false &&
             meal.isOneHundredToOneFifty) {
           return false;
         }
-        if (_filters["oneFiftyToTwoHundred"] == true &&
+        if (_filters["oneFiftyToTwoHundred"] == false &&
             meal.isOneFiftyToTwoHundred) {
           return false;
         }
-        if (_filters["twoHundredAbove"] == true && meal.isTwoHundredAbove) {
+        if (_filters["twoHundredAbove"] == false && meal.isTwoHundredAbove) {
           return false;
         }
+
         if (_filters['cheese'] == true && meal.isAllergyCheese) {
           return false;
         }

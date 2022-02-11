@@ -38,7 +38,7 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('EMEAL 3D Model'),
+          title: const Text('0ptimized 3D Loading'),
           leading: new IconButton(
             icon: new Icon(Icons.ac_unit),
             onPressed: () => Navigator.of(context).pop(),
